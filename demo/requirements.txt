@@ -1,5 +1,5 @@
-ultralytics
-opencv-python
-numpy
-tqdm
-pyyaml
+ultralytics==8.4.33
+opencv-python>=4.10.0.84
+numpy>=1.26.0
+tqdm>=4.66.0
+pyyaml>=6.0.1
