@@ -35,34 +35,29 @@ An end-to-end computer vision solution designed for automated face mask complian
 
 ## 🛠️ Installation & Usage
 
-### 1. Requirements
-Ensure you have Python 3.10+ installed. Install dependencies via:
-```bash
-pip install ultralytics opencv-python numpy tqdm pyyaml
+### 1. Environment Setup
+Ensure you have **Python 3.10 - 3.12** installed. It is highly recommended to use a virtual environment to avoid conflicts:
 
-### 2. Running Surveillance
-To start the live monitor (supports Webcams or RTSP links):
 
-Bash
-python src/hospital_guard.py
-### 3. Training Data Pipeline
-To reproduce the balanced dataset using the Selective Cropping method:
+# Create and activate a virtual environment
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
-Run the processing script:
+### 2. Install Dependencies
+Install all necessary libraries using the provided requirements file to ensure version compatibility:
+pip install -r requirements.txt
 
-Python
-# From dataset_processing/selective_crop.py
-# Isolated minority class bounding boxes are extracted and duplicated.
-Execute training:
 
-Python
-from ultralytics import YOLO
-model = YOLO('yolov8n.pt')
-model.train(data='data.yaml', epochs=100, imgsz=640, optimizer='AdamW')
-🤝 Technical Challenges Overcome
-Imbalance Handling: Standard upsampling caused "majority class leak" where common cases were over-replicated. Switched to a Selective Cropping approach, isolating minority class features for training.
+### 3. File Organization
+Place the following files in your root directory to ensure the demo script can correctly locate the model:
+* `demo.ipynb`: The surveillance logic notebook.
+* `best_model.pt`: The trained YOLOv8 model weights.
+* `hospital_violations/`: Folder where violation evidence will be saved (automatically created).
 
-Memory Management: Implemented an automated ID cleanup script that purges tracking history for persons not seen for 30 minutes, preventing RAM overflow during 24/7 operation.
-
-Developed by: Tùng
-Project Category: Computer Vision / Public Health Safety
+### 4. Run Surveillance Demo
+1. Open `demo.ipynb` in your preferred editor (Jupyter or VS Code).
+2. Verify the model loading line: `model = YOLO('best_model.pt')`.
+3. Execute all cells to start real-time monitoring via your webcam.
