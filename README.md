@@ -35,7 +35,13 @@ An end-to-end computer vision solution designed for automated face mask complian
 
 ## Installation & Usage
 
-### 1. Environment Setup
+### 1. Clone the Project
+First, clone this repository to your local machine using Git:
+
+git clone [https://github.com/your-username/Face-Mask-Detection-System.git](https://github.com/your-username/Face-Mask-Detection-System.git)
+cd Face-Mask-Detection-System
+
+### Environment Setup
 Ensure you have **Python 3.10 - 3.12** installed. It is highly recommended to use a virtual environment to avoid conflicts:
 
 
