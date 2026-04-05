@@ -39,11 +39,11 @@ An end-to-end computer vision solution designed for automated face mask complian
 Ensure you have **Python 3.10 - 3.12** installed. It is highly recommended to use a virtual environment to avoid conflicts:
 
 
-Create and activate a virtual environment
+### Create and activate a virtual environment
 python -m venv venv
-Windows:
+### Windows:
 venv\Scripts\activate
-macOS/Linux:
+### macOS/Linux:
 source venv/bin/activate
 
 ### 2. Install Dependencies
