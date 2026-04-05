@@ -1,7 +1,7 @@
 # AI-Powered-Face-Mask-Surveillance-System
 An end-to-end computer vision solution designed for automated face mask compliance monitoring in hospital environments. This system leverages YOLOv8, ByteTrack, and custom business logic to ensure public health safety with high precision and hardware efficiency.
 
-## 🚀 Key Features
+## Key Features
 
 * **Real-time Hybrid Detection**: Classifies individuals into three categories: `with_mask`, `without_mask`, and `mask_weared_incorrect`.
 * **Intelligent Violation Logic**:
@@ -11,7 +11,7 @@ An end-to-end computer vision solution designed for automated face mask complian
     * **Selective Cropping & Upsampling**: Solved extreme class imbalance by isolating and duplicating minority class features (incorrectly worn masks) without diluting the majority class.
 * **Hardware Optimized**: Ready for deployment on hospital edge servers via **OpenVINO** and **INT8 Quantization**, achieving ~30 FPS on standard CPUs.
 
-## 📊 Technical Performance
+## Technical Performance
 
 | Metric | Value |
 | :--- | :--- |
@@ -22,7 +22,7 @@ An end-to-end computer vision solution designed for automated face mask complian
 
 > **Note**: The `mask_weared_incorrect` class was specifically improved using a custom **Selective Cropping Pipeline**, boosting its recall and making the model reliable for catching "nose-out" or "chin-only" mask-wearing cases.
 
-## 🏗️ System Architecture
+## System Architecture
 
 1.  **Input**: High-definition RTSP streams from hospital hall cameras or local webcams.
 2.  **Tracking**: ByteTrack assigns a unique ID to every person entering the frame to monitor individual behavior over time.
@@ -33,17 +33,17 @@ An end-to-end computer vision solution designed for automated face mask complian
     * Saves high-res face crop to `violations_log/`.
 5.  **Output**: Real-time visual monitor and archived proof of violations.
 
-## 🛠️ Installation & Usage
+## Installation & Usage
 
 ### 1. Environment Setup
 Ensure you have **Python 3.10 - 3.12** installed. It is highly recommended to use a virtual environment to avoid conflicts:
 
 
-# Create and activate a virtual environment
+Create and activate a virtual environment
 python -m venv venv
-# Windows:
+Windows:
 venv\Scripts\activate
-# macOS/Linux:
+macOS/Linux:
 source venv/bin/activate
 
 ### 2. Install Dependencies
